@@ -1,15 +1,16 @@
 {
   "schema_version": "v1",
-  "name_for_human": "GPT Google Sheets Manager",
-  "name_for_model": "gpt_google_sheets_manager",
-  "description_for_human": "Plugin to manage Google Sheets through Apps Script API",
-  "description_for_model": "Sends structured requests to Google Apps Script Web App to manipulate Google Sheets",
+  "name_for_human": "GPT DB Manager",
+  "name_for_model": "gpt_db_manager",
+  "description_for_human": "נהל את מסד הנתונים שלך ב־Google Sheets באמצעות GPT.",
+  "description_for_model": "API for creating, updating, and managing data in Google Sheets via Google Apps Script.",
   "auth": { "type": "none" },
   "api": {
     "type": "openapi",
-    "url": "https://shacharoz.github.io/gpt-gas-plugin/openapi.yaml"
+    "url": "https://s7237230.github.io/gpt-gas-plugin/openapi.yaml",
+    "is_user_authenticated": false
   },
-  "logo_url": "https://shacharoz.github.io/gpt-gas-plugin/logo.png",
-  "contact_email": "support@shacharoz.com",
-  "legal_info_url": "https://shacharoz.github.io/gpt-gas-plugin/legal"
+  "logo_url": "https://s7237230.github.io/gpt-gas-plugin/logo.png",
+  "contact_email": "s7237230@gmail.com",
+  "legal_info_url": "https://s7237230.github.io/gpt-gas-plugin/"
 }
