@@ -1,15 +1,15 @@
 openapi: 3.1.0
 info:
-  title: GPT GAS Plugin
-  description: Plugin that interacts with Google Apps Script Webhook to manage Sheets
-  version: 1.0.0
+  title: GPT DB Manager
+  description: API to manage Google Sheets database via Google Apps Script.
+  version: "1.0"
 servers:
-  - url: https://script.google.com/macros/s/AKfycbyhXeJNvF-k-IOPjuPriRafqQ-RODPoLKujnodWQO6yQyjglHIRPLGNT8w70WaYNDs/exec
+  - url: "https://script.google.com/macros/s/AKfycbxgCe3BoBJCvysUGEJHv7-rhXZdEmUE2UvoAhufFzGVUya87IApWCF31-wwRepRpbc/exec"
 paths:
   /:
     post:
-      operationId: manageSheets
-      summary: Send a command to manage a sheet
+      summary: Manage database
+      operationId: manageDatabase
       requestBody:
         required: true
         content:
@@ -19,18 +19,22 @@ paths:
               properties:
                 action:
                   type: string
-                  description: The action to perform
-                sheet_name:
+                table:
                   type: string
                 row_data:
                   type: object
+                  additionalProperties:
+                    type: string
                 filter:
                   type: object
-                column_name:
-                  type: string
+                  additionalProperties:
+                    type: string
+              required:
+                - action
+                - table
       responses:
         '200':
-          description: Action executed successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -38,5 +42,5 @@ paths:
                 properties:
                   status:
                     type: string
-                  message:
-                    type: string
+                  details:
+                    type: object
