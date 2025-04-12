@@ -1,9 +1,9 @@
 # GPT GAS Plugin
 
-This plugin enables ChatGPT to send commands to your Google Apps Script Web App for controlling Google Sheets.
+Plugin המאפשר ל-GPT לנהל דאטה־בייס של Google Sheets דרך Google Apps Script.
 
-## Setup Instructions
+## הוראות התקנה
 
-1. Upload all files in this folder to a public GitHub repository (e.g., gpt-gas-plugin).
-2. Enable GitHub Pages under `Settings > Pages`.
-3. Use the plugin in ChatGPT via: "Develop your own plugin" → Enter: https://shacharoz.github.io/gpt-gas-plugin/
+1. העלה את כל הקבצים לתיקיית GitHub ציבורית (למשל gpt-gas-plugin).
+2. הפעל GitHub Pages מתוך ההגדרות תחת Settings → Pages.
+3. השתמש ב-plugin מתוך ChatGPT על ידי בחירה באפשרות: Develop your own plugin ← והזן את ה-URL הבא:
