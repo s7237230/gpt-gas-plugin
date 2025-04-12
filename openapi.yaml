@@ -1,34 +1,55 @@
 openapi: 3.1.0
 info:
-  title: GPT DB Manager
-  description: API for managing data in Google Sheets via Apps Script
-  version: '1.0'
+  title: GPT MASTER DB Plugin
+  description: Plugin for managing Google Sheets database via your custom server
+  version: 1.0.0
 servers:
-  - url: https://script.google.com/macros/s/AKfycbwu5ikFRMKfg_ao0fVyksfvjtGQO3ttsmhDUGRFSyoyp6P6OpiF8-PErD7JeEro3s4/exec
+  - url: https://oz-clinic.co.il/gpt-plugin/
+
 paths:
   /:
     post:
-      summary: Perform a database action
       operationId: manageDatabase
+      summary: Execute database operation
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
+              required:
+                - action
+                - table
               properties:
                 action:
                   type: string
+                  enum:
+                    - insert_row
+                    - update_row
+                    - delete_row
+                    - query
                 table:
                   type: string
+                  description: Table name (e.g., DB MASTER)
                 row_data:
                   type: object
+                  description: Row data (keys as "1", "2", etc.)
                 filter:
                   type: object
+                  description: Filter for update/delete/query
+                column_name:
+                  type: string
+                  description: For future use (adding columns)
+
       responses:
         '200':
-          description: Successful operation
+          description: Success
           content:
             application/json:
               schema:
                 type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
