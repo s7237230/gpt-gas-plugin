@@ -1,14 +1,14 @@
 openapi: 3.1.0
 info:
   title: GPT DB Manager
-  description: API to manage Google Sheets database via Google Apps Script.
-  version: "1.0"
+  description: API for managing data in Google Sheets via Apps Script
+  version: '1.0'
 servers:
-  - url: https://script.google.com/macros/s/AKfycbwu5ikFRMKfg_ao0fVyksfvjtGQO3ttsmhDUGRFSyoyp6P6OpiF8-PErD7JeEro3s4/exec"
+  - url: https://script.google.com/macros/s/AKfycbwu5ikFRMKfg_ao0fVyksfvjtGQO3ttsmhDUGRFSyoyp6P6OpiF8-PErD7JeEro3s4/exec
 paths:
   /:
     post:
-      summary: Manage database
+      summary: Perform a database action
       operationId: manageDatabase
       requestBody:
         required: true
@@ -23,15 +23,8 @@ paths:
                   type: string
                 row_data:
                   type: object
-                  additionalProperties:
-                    type: string
                 filter:
                   type: object
-                  additionalProperties:
-                    type: string
-              required:
-                - action
-                - table
       responses:
         '200':
           description: Successful operation
@@ -39,8 +32,3 @@ paths:
             application/json:
               schema:
                 type: object
-                properties:
-                  status:
-                    type: string
-                  details:
-                    type: object
