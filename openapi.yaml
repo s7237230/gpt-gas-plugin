@@ -4,7 +4,7 @@ info:
   description: API to manage Google Sheets database via Google Apps Script.
   version: "1.0"
 servers:
-  - url: "https://script.google.com/macros/s/AKfycbxgCe3BoBJCvysUGEJHv7-rhXZdEmUE2UvoAhufFzGVUya87IApWCF31-wwRepRpbc/exec"
+  - url: https://script.google.com/macros/s/AKfycbwu5ikFRMKfg_ao0fVyksfvjtGQO3ttsmhDUGRFSyoyp6P6OpiF8-PErD7JeEro3s4/exec"
 paths:
   /:
     post:
